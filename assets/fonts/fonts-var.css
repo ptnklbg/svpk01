@@ -1,0 +1,364 @@
+@font-face {
+    font-family: 'Kan-Anek-Var';
+    src: url("variable/Anek_Kannada/AnekKannada-Variable.woff2")format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-anek-var {
+    font-family: 'Kan-Anek-Var';
+}
+
+@font-face {
+    font-family: 'Kan-BalooTamma2-Var';
+    src: url("./variable/BalooTamma2/BalooTamma2-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-balootamma2-var {
+    font-family: 'Kan-BalooTamma2-Var';
+}
+
+@font-face {
+    font-family: 'Kan-NotoSans-Var';
+    src: url("./variable/NotoSansKannada/NotoSansKannada-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-notosans-var {
+    font-family: 'Kan-NotoSans-Var';
+}
+
+@font-face {
+    font-family: 'Kan-NotoSerif-Var';
+    src: url("./variable/NotoSerifKannada/NotoSerifKannada-Variablet.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-notoserif-var {
+    font-family: 'Kan-NotoSerif-Var';
+}
+
+@font-face {
+    font-family: 'Montserrat-Var';
+    src: url("./variable/Montserrat/Montserrat-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-montserrat-var {
+    font-family: 'Montserrat-Var';
+}
+
+@font-face {
+    font-family: 'Montserrat-Italic-Var';
+    src: url("./variable/Montserrat/Montserrat-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-montserrat-italic-var {
+    font-family: 'Montserrat-Italic-Var';
+}
+
+@font-face {
+    font-family: 'Alegreya-Var';
+    src: url("./variable/Alegreya/Alegreya-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-alegreya-var {
+    font-family: 'Alegreya-Var';
+}
+
+@font-face {
+    font-family: 'Alegreya-Italic-Var';
+    src: url("./variable/Alegreya/Alegreya-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-alegreya-italic-var {
+    font-family: 'Alegreya-Italic-Var';
+}
+
+
+@font-face {
+    font-family: 'Aleo-Var';
+    src: url("./variable/Aleo/Aleo-Variablet.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-aleo-var {
+    font-family: 'Aleo-Var';
+}
+
+@font-face {
+    font-family: 'Aleo-Italic-Var';
+    src: url("./variable/Alegreya/Alegreya-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-aleo-italic-var {
+    font-family: 'Aleo-Italic-Var';
+}
+
+@font-face {
+    font-family: 'Asap-Var';
+    src: url("./variable/Asap/Asap-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-asap-var {
+    font-family: 'Asap-Var';
+}
+
+@font-face {
+    font-family: 'Asap-Italic-Var';
+    src: url("./variable/Asap/Asap-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-asap-italic-var {
+    font-family: 'Asap-Italic-Var';
+}
+
+
+@font-face {
+    font-family: 'Mulish-Var';
+    src: url("./variable/Mulish/Mulish-VariableFont.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-mulish-var {
+    font-family: 'Mulish-Var';
+}
+
+@font-face {
+    font-family: 'Mulish-Italic-Var';
+    src: url("./variable/Mulish/Mulish-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-mulish-italic-var {
+    font-family: 'Mulish-Italic-Var';
+}
+
+
+@font-face {
+    font-family: 'Nunito-Sans-Var';
+    src: url("./variable/Nunito_Sans/Nunito-Sans-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-nunito-sans-var {
+    font-family: 'Nunito-Sans-Var';
+}
+
+@font-face {
+    font-family: 'Nunito-Sans-Italic-Var';
+    src: url("./variable/Nunito_Sans/Nunito-Sans-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-nunito-sans-italic-var {
+    font-family: 'Nunito-Sans-Italic-Var';
+}
+
+
+@font-face {
+    font-family: 'Open-Sans-Var';
+    src: url("./variable/Open_Sans/OpenSans-Variablt.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-open-sans-var {
+    font-family: 'Nunito-Sans-Var';
+}
+
+@font-face {
+    font-family: 'Open-Sans-Italic-Var';
+    src: url("./variable/Open_Sans/OpenSans-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-open-sans-italic-var {
+    font-family: 'Nunito-Sans-Italic-Var';
+}
+
+@font-face {
+    font-family: 'Oswald-Var';
+    src: url("./variable/Oswald/Oswald-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-oswald-var {
+    font-family: 'Oswald-Var';
+}
+
+@font-face {
+    font-family: 'Playfair-Var';
+    src: url("./variable/Playfair/Playfair-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-playfair-var {
+    font-family: 'Playfair-Var';
+}
+
+@font-face {
+    font-family: 'Playfair-Italic-Var';
+    src: url("./variable/Playfair/Playfair-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-playfair-italic-var {
+    font-family: 'Playfair-Italic-Var';
+}
+
+@font-face {
+    font-family: 'Raleway-Var';
+    src: url("./variable/Raleway/Raleway-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-raleway-var {
+    font-family: 'Raleway-Var';
+}
+
+@font-face {
+    font-family: 'Raleway-Italic-Var';
+    src: url("./variable/Raleway/Raleway-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-raleway-italic-var {
+    font-family: 'Raleway-Italic-Var';
+}
+
+@font-face {
+    font-family: 'RobotoCondensed-Var';
+    src: url("./variable/Roboto_Condensed/RobotoCondensed-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-condensed-var {
+    font-family: 'RobotoCondensed-Var';
+}
+
+@font-face {
+    font-family: 'RobotoCondensed-Italic-Var';
+    src: url("./variable/Roboto_Condensed/RobotoCondensed-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-condensed-italic-var {
+    font-family: 'RobotoCondensed-Italic-Var';
+}
+
+@font-face {
+    font-family: 'RobotoFlex-Italic-Var';
+    src: url("./variable/Roboto_Flex/RobotoFlex-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-flex-var {
+    font-family: 'RobotoFlex-Italic-Var';
+}
+
+.ff-roboto-condensed-var {
+    font-family: 'RobotoCondensed-Var';
+}
+
+@font-face {
+    font-family: 'RobotoMono-Var';
+    src: url("./variable/Roboto_Mono/RobotoMono-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-mono-var {
+    font-family: 'RobotoMono-Var';
+}
+
+@font-face {
+    font-family: 'RobotoMono-Italic-Var';
+    src: url("./variable/Roboto_Mono/RobotoMono-Italic-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-mono-italic-var {
+    font-family: 'RobotoMono-Italic-Var';
+}
+
+
+@font-face {
+    font-family: 'RobotoSlab-Var';
+    src: url("./variable/Roboto_Slab/RobotoSlab-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-slab-var {
+    font-family: 'RobotoSlab-Var';
+}
+
+
+.fw-thin {
+    font-weight: 100;
+}
+
+.fw-extra-light {
+    font-weight: 200;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-extra-bold {
+    font-weight: 800;
+}
+
+.fw-black {
+    font-weight: 800;
+}

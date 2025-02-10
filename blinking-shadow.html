@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blinking Shadow Effect</title>
+    <style>
+      @keyframes blinkingShadow {
+        0% {
+          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        }
+        50% {
+          text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+        100% {
+          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        }
+      }
+
+      .blinking-text {
+        font-size: 2em;
+        color: rgb(255, 255, 255);
+
+        animation: blinkingShadow 1s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="blinking-text">Blinking Shadow Effect!</h1>
+  </body>
+</html>

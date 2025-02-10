@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>conic gradient</title>
+    <style>
+      div {
+        text-align: center;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-shadow: 0 0 5px red;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
+      .box {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      .conic-test {
+        background-image: conic-gradient(red, rgb(255, 25, 221), green, blue, orange, red);
+      }
+      .conic-silver {
+        background: conic-gradient(
+          #d9d9d9 0%,
+          #c0c0c0 20%,
+          #ffffff 40%,
+          #a9a9a9 60%,
+          #808080 80%,
+          #d9d9d9 100%
+        );
+      }
+      .conic-gold {
+        background: conic-gradient(
+          #fff8dc 0%,
+          #ffd700 20%,
+          #ffecb3 40%,
+          #ffc107 60%,
+          #b8860b 80%,
+          #fff8dc 100%
+        );
+      }
+      .conic-silver-gold {
+        background: conic-gradient(
+          #d9d9d9 0%,
+          #ffd700 15%,
+          #c0c0c0 30%,
+          #ffecb3 45%,
+          #808080 60%,
+          #ffc107 75%,
+          #fff8dc 90%,
+          #d9d9d9 100%
+        );
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box conic-test">Test</div>
+      <div class="box conic-silver">Silver</div>
+      <div class="box conic-gold">Gold</div>
+      <div class="box conic-silver-gold">Silver+Gold</div>
+    </div>
+  </body>
+</html>

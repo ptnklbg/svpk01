@@ -1,0 +1,127 @@
+/***********************************************************************************/
+/********************************* VARIABLE FONTS  *********************************/
+/***********************************************************************************/
+
+/************* Anek Kannada Variable font *************/
+@font-face {
+    font-family: 'Kan-Anek-Var';
+    src: url("./assets/fonts/variable/Anek_Kannada/AnekKannada-Variable.woff2")format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-anek-var {
+    font-family: 'Kan-Anek-Var';
+}
+
+/************* Baloo Tamma ver 2 Variable font *************/
+@font-face {
+    font-family: 'Kan-BalooTamma2-Var';
+    src: url("./assets/fonts/variable/BalooTamma2/BalooTamma2-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-balootamma2-var {
+    font-family: 'Kan-BalooTamma2-Var';
+}
+
+/************* Noto Sans Kannada Variable font *************/
+@font-face {
+    font-family: 'Kan-NotoSans-Var';
+    src: url("./assets/fonts/variable/NotoSansKannada/NotoSansKannada-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-notosans-var {
+    font-family: 'Kan-NotoSans-Var';
+}
+
+/************* Noto Serif Kannada Variable font *************/
+@font-face {
+    font-family: 'Kan-NotoSerif-Var';
+    src: url("./assets/fonts/variable/NotoSerifKannada/NotoSerifKannada-Variablet.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-kan-notoserif-var {
+    font-family: 'Kan-NotoSerif-Var';
+}
+
+/************* Montserrat Variable font *************/
+@font-face {
+    font-family: 'Montserrat-Var';
+    src: url("./assets/fonts/variable/Montserrat/Montserrat-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-montserrat-var {
+    font-family: 'Montserrat-Var';
+}
+
+
+/************* Roboto Flex Variable font *************/
+@font-face {
+    font-family: 'RobotoFlex-Var';
+    src: url("./assets/fonts/variable/Roboto_Flex/RobotoFlex-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-flex-var {
+    font-family: 'RobotoFlex-Var';
+}
+
+
+/************* Roboto Slab Variable font *************/
+
+@font-face {
+    font-family: 'RobotoSlab-Var';
+    src: url("./assets/fonts/variable/Roboto_Slab/RobotoSlab-Variable.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.ff-roboto-slab-var {
+    font-family: 'RobotoSlab-Var';
+}
+
+
+.fw-thin {
+    font-weight: 100;
+}
+
+.fw-extra-light {
+    font-weight: 200;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-extra-bold {
+    font-weight: 800;
+}
+
+.fw-black {
+    font-weight: 800;
+}

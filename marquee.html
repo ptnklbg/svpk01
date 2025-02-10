@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: aliceblue;
+      }
+      /************** start of CSS for marquee text script  **************/
+      .marquee-container {
+        width: 100%; /* Adjust as needed */
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        position: relative;
+        height: 30px; /* Adjust height as needed */
+        background-color: rgb(108, 108, 108);
+      }
+
+      .marquee-text {
+        display: flex;
+        position: absolute;
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+        list-style: none; /* Remove default bullets */
+        gap: 30px; /* Adjust spacing between items */
+        will-change: transform; /* Optimize for performance */
+      }
+      .marquee-text li {
+        display: inline-block;
+        padding: 5px 10px; /* Optional padding for spacing */
+        font-size: 18px; /* Adjust font size as needed */
+        background: #e0e0e0; /* Optional for better visibility */
+        border-radius: 5px; /* Optional for rounded edges */
+      }
+      /************** end of CSS for marquee text script  **************/
+    </style>
+  </head>
+  <body>
+    <div class="marquee-container">
+      <ul class="marquee-text">
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, facere!</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, facere!</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, facere!</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, facere!</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, facere!</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, facere!</li>
+      </ul>
+    </div>
+
+    <script>
+      /************** start of script for marquee text script  **************/
+      document.addEventListener("DOMContentLoaded", () => {
+        const marqueeText = document.querySelector(".marquee-text");
+        const containerWidth = document.querySelector(".marquee-container").offsetWidth;
+
+        let animationFrameId;
+        let currentPosition = containerWidth;
+
+        function animate() {
+          const textWidth = marqueeText.offsetWidth;
+
+          if (currentPosition + textWidth <= 0) {
+            currentPosition = containerWidth; // Reset position when text scrolls out of view
+          }
+          marqueeText.style.transform = `translateX(${currentPosition}px)`;
+          currentPosition -= 2; // Adjust speed by changing this value
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        function startMarquee() {
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        function stopMarquee() {
+          cancelAnimationFrame(animationFrameId);
+        }
+
+        // Start marquee immediately
+        startMarquee();
+
+        // Pause on hover
+        marqueeText.addEventListener("mouseenter", stopMarquee);
+        marqueeText.addEventListener("mouseleave", startMarquee);
+      });
+      /************** end of script for marquee text script  **************/
+    </script>
+  </body>
+</html>

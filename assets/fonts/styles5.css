@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Anek-Kannada-Variable';
+    src: url("fonts/Anek_Kannada/AnekKannada-VariableFont-1.woff2")format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baloo-Tamma2-Variable';
+    src: url("fonts/Baloo_Tamma_2/BalooTamma2-VariableFont_wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto-Sans-Kannada-Variable';
+    src: url("fonts/Noto_Sans_Kannada/NotoSansKannada-VariableFont_wdth,wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto-Serif-Kannada-Variable';
+    src: url("fonts/Noto_Serif_Kannada/NotoSerifKannada-VariableFont_wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Variable';
+    src: url("fonts/Montserrat/Montserrat-VariableFont_wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6bcbc;
+}
+
+.font-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+}
+
+p {
+    text-align: left;
+    margin: 0;
+}
+
+.font-block {
+    margin-bottom: 30px;
+}
+
+
+.text {
+    font-size: 1.5rem;
+    background-color: #e4dbdb;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.anek-kannada-variable {
+    font-family: 'Anek-Kannada-Variable';
+}
+
+.baloo-tamma2-kannada-variable {
+    font-family: 'Baloo-Tamma2-Kannada-Variable';
+}
+
+.noto-sans-kannada-variable {
+    font-family: 'Noto-Sans-Kannada-Variable';
+}
+
+.noto-serif-kannada-variable {
+    font-family: 'Noto-Serif-Kannada-Variable';
+}
+
+.montserrat-variable {
+    font-family: 'Montserrat-Variable';
+}
+
+.fw-thin {
+    font-weight: 100;
+}
+
+.fw-extra-light {
+    font-weight: 200;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-extra-bold {
+    font-weight: 800;
+}
+
+.fw-black {
+    font-weight: 800;
+}

@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Anek-Kan-Var';
+    src: url("./variable/Anek_Kannada/AnekKannada-VariableFont-1.woff2")format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.anek-kan-var {
+    font-family: 'Anek-Kan-Var';
+}
+
+@font-face {
+    font-family: 'Baloo-Tamma2-Kannada-Variable';
+    src: url("fonts/Baloo_Tamma_2/BalooTamma2-VariableFont_wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Noto-Sans-Kannada-Variable';
+    src: url("fonts/Noto_Sans_Kannada/NotoSansKannada-VariableFont_wdth,wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto-Serif-Kannada-Variable';
+    src: url("fonts/Noto_Serif_Kannada/NotoSerifKannada-VariableFont_wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Variable';
+    src: url("fonts/Montserrat/Montserrat-VariableFont_wght.woff2") format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+
+
+
+.baloo-tamma2-kannada-variable {
+    font-family: 'Baloo-Tamma2-Kannada-Variable';
+}
+
+.noto-sans-kannada-variable {
+    font-family: 'Noto-Sans-Kannada-Variable';
+}
+
+.noto-serif-kannada-variable {
+    font-family: 'Noto-Serif-Kannada-Variable';
+}
+
+.montserrat-variable {
+    font-family: 'Montserrat-Variable';
+}
+
+.robot-flex-regular {
+    font-family: 'Roboto-Flex-Regular';
+}
+
+.fw-thin {
+    font-weight: 100;
+}
+
+.fw-extra-light {
+    font-weight: 200;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-extra-bold {
+    font-weight: 800;
+}
+
+.fw-black {
+    font-weight: 800;
+}

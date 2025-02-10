@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    background: #eee;
+}
+
+/* Circle container */
+.icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: white;
+    font-size: 12px;
+}
+
+/* Optional: Hover effect */
+.icon-circle:hover {
+    background-color: #87f88d;
+    color: darkblue;
+}
+
+
+.intro {
+    background: #fff;
+    padding-top: 05px;
+    color: #333;
+    margin-bottom: 2px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro .toprow {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 05px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(252, 255, 193);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.intro .toprow a.link,
+.intro .toprow a.visited,
+.intro .toprow a.hover {
+    text-decoration: none;
+    color: black;
+}
+
+.intro .toprow .social a {
+    margin-right: 10px;
+    color: black;
+    border-radius: 50%;
+}
+
+.intro .middlerow {
+    background-color: rgb(219, 219, 219);
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    ;
+}
+
+.intro .middlerow img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(60, 60, 60, 0.4);
+}
+
+.intro .middlerow .heading h1 {
+    text-transform: inherit;
+    margin: 0px auto 0px;
+    color: rgb(15, 5, 102);
+    -webkit-text-shadow: 2px 2px 2px #929292;
+    -moz-text-shadow: 2px 2px 2px #929292;
+    text-shadow: 2px 2px 2px #fc030381;
+}
+
+.intro .thirdrow {
+    margin-left: 20px;
+    margin-right: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 3333;
+}
+
+.intro .thirdrow img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 214, 111, 0.518);
+}
+
+.intro h1,
+.intro h2,
+.intro h3,
+.intro p {
+    font-weight: bold;
+    margin: 4px;
+    padding: 0;
+}
+
+.intro p {
+    font-size: 14px;
+}
+
+main p {
+    font-size: 1.1rem;
+}
+
+.credit {
+    background: #fff;
+    padding: 12px;
+    font-size: 9pt;
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+
+}
+
+.credit span:before {
+    font-family: FontAwesome;
+    color: #e41b17;
+    content: "\f004";
+
+
+}
+
+.credit a {
+    color: #333;
+    text-decoration: none;
+}
+
+.credit a:hover {
+    color: #1DBF73;
+}
+
+.credit a:hover:after {
+    font-family: FontAwesome;
+    content: "\f08e";
+    font-size: 9pt;
+    position: absolute;
+    margin: 3px;
+}
+
+main {
+    min-height: 500px;
+    background: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+
+}
+
+@media only screen and (min-width: 1400px) {
+    main {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 24px;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dropdown-menu.show {
+    -webkit-animation: fadeIn 0.4s alternate;
+    /* Safari 4.0 - 8.0 */
+    animation: fadeIn 0.4s alternate;
+}
+
+.nav-item.dropdown.dropdown-mega {
+    position: static;
+}
+
+.nav-item.dropdown.dropdown-mega .dropdown-menu {
+    width: 80%;
+    top: auto;
+    left: 10%;
+    right: 10%;
+    background-color: antiquewhite;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler .hamburger-toggle {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    z-index: 11;
+    /*float: right;*/
+}
+
+.navbar-toggler .hamburger-toggle .hamburger {
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(0deg);
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    pointer-events: none;
+}
+
+.navbar-toggler .hamburger-toggle .hamburger span {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 2px;
+    z-index: 1;
+    transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), all 0.2s ease-in-out;
+    left: 0px;
+}
+
+.navbar-toggler .hamburger-toggle .hamburger span:first-child {
+    top: 10%;
+    transform-origin: 50% 50%;
+    transform: translate(0% -50%) !important;
+}
+
+.navbar-toggler .hamburger-toggle .hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.navbar-toggler .hamburger-toggle .hamburger span:last-child {
+    left: 0px;
+    top: auto;
+    bottom: 10%;
+    transform-origin: 50% 50%;
+}
+
+.navbar-toggler .hamburger-toggle .hamburger.active span {
+    position: absolute;
+    margin: 0;
+}
+
+.navbar-toggler .hamburger-toggle .hamburger.active span:first-child {
+    top: 45%;
+    transform: rotate(45deg);
+}
+
+.navbar-toggler .hamburger-toggle .hamburger.active span:nth-child(2) {
+    left: 50%;
+    width: 0px;
+}
+
+.navbar-toggler .hamburger-toggle .hamburger.active span:last-child {
+    top: 45%;
+    transform: rotate(-45deg);
+}
+
+.icons {
+    display: inline-flex;
+    margin-left: auto;
+}
+
+.icons a {
+    transition: all 0.2s ease-in-out;
+    padding: 0.2rem 0.4rem;
+    color: #ccc !important;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: white;
+    text-shadow: 0 0 30px white;
+}
