@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Sidebar with Overlay</title>
+    <link rel="stylesheet" href="test1-styles.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+      <nav>
+        <ul>
+          <li><a href="test1-index.html">Home</a></li>
+          <li><a href="test1-about.html">About</a></li>
+          <li><a href="test1-contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Background Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Hamburger Button -->
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>Welcome to the Home Page</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...</p>
+    </main>
+
+    <script src="test1-script.js"></script>
+  </body>
+</html>

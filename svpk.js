@@ -1,4 +1,4 @@
-/************** start of script for marquee text script  **************/
+// -------------- JavaScript for marquee text script --------------
 document.addEventListener("DOMContentLoaded", () => {
   const marqueeText = document.querySelector(".marquee-text");
   const containerWidth = document.querySelector(".marquee-container").offsetWidth;
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentPosition = containerWidth; // Reset position when text scrolls out of view
     }
     marqueeText.style.transform = `translateX(${currentPosition}px)`;
-    currentPosition -= 1; // Adjust speed by changing this value
+    currentPosition -= 2; // Adjust speed by changing this value
     animationFrameId = requestAnimationFrame(animate);
   }
 
@@ -32,4 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
   marqueeText.addEventListener("mouseenter", stopMarquee);
   marqueeText.addEventListener("mouseleave", startMarquee);
 });
-/************** end of script for marquee text script  **************/
+// -------------- End of JavaScript for marquee text script --------------
+
+// -------------- script to Detect Scroll and Change Navbar Background --------------
+window.addEventListener("scroll", function () {
+  var navbar = document.getElementById("megamenu-section");
+  var navlogo = document.getElementsByClassName("navlogo");
+
+  if (window.scrollY > 100) {
+    // Change background after scrolling 100px
+    navbar.classList.add("scrolled");
+    navlogo.classList.add("scrolled-logo");
+  } else {
+    navbar.classList.remove("scrolled");
+    navlogo.classList.remove("scrolled-logo");
+  }
+});
+// -------------- End of script to Detect Scroll and Change Navbar Background --------------
