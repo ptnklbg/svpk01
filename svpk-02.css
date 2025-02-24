@@ -64,7 +64,7 @@ nav .top-row .right .fab {
     border-left: 2px solid rgb(191, 0, 178);
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-width:800px) {
 
     .top-row .left,
     .top-row .right {
@@ -134,6 +134,14 @@ nav .top-row .right .fab {
     }
 }
 
+@media screen and (max-width:800px) {
+    .middle-row .image {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
 .middle-row .names {
     display: flex;
     flex-direction: column;
@@ -167,6 +175,12 @@ h5 {
 
 .middle-row .names h5 {
     font-size: 0.7rem;
+}
+
+@media screen and (max-width:800px) {
+    .middle-row .names h1 {
+        font-size: 1.4rem;
+    }
 }
 
 /******** start of megamenu code ********/
