@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <style>
+      /* Embedded CSS */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      /* Header Styles */
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .header-row {
+        margin: 10px 0;
+      }
+
+      .logo {
+        width: 100px;
+        height: auto;
+      }
+
+      .navbar a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        width: 250px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        background-color: #333;
+        transition: left 0.3s;
+        padding: 20px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 15px 0;
+      }
+
+      .sidebar ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      #toggleSidebar {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      #darkModeToggle {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background-color: #333;
+        color: #fff;
+      }
+
+      body.dark-mode header {
+        background-color: #222;
+        border-bottom: 1px solid #444;
+      }
+
+      body.dark-mode .navbar a {
+        color: #fff;
+      }
+
+      body.dark-mode .sidebar {
+        background-color: #222;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Block -->
+    <header>
+      <div class="header-row">
+        <img src="logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="header-row">
+        <h1>Institution Name</h1>
+      </div>
+      <div class="header-row">
+        <p>123 Main Street, City, Country</p>
+      </div>
+      <div class="header-row">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sidebar and Dark Mode Button -->
+    <div class="sidebar" id="sidebar">
+      <button id="toggleSidebar">☰</button>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+      <button id="darkModeToggle">Dark Mode</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <h2>Welcome to the Website</h2>
+      <p>This is the main content area.</p>
+    </main>
+
+    <script>
+      // Embedded JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.getElementById("sidebar");
+        const toggleSidebarButton = document.getElementById("toggleSidebar");
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        const body = document.body;
+
+        // Toggle Sidebar
+        toggleSidebarButton.addEventListener("click", () => {
+          sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+        });
+
+        // Dark Mode Toggle
+        darkModeToggle.addEventListener("click", () => {
+          body.classList.toggle("dark-mode");
+          const isDarkMode = body.classList.contains("dark-mode");
+          localStorage.setItem("darkMode", isDarkMode);
+        });
+
+        // Load Dark Mode Preference from LocalStorage
+        const savedDarkMode = localStorage.getItem("darkMode") === "true";
+        if (savedDarkMode) {
+          body.classList.add("dark-mode");
+        }
+      });
+    </script>
+  </body>
+</html>

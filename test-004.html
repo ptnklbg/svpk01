@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Fixed Sidebar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      /* Sidebar Menu */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 60px; /* Collapsed width */
+        height: 100vh;
+        background-color: #333;
+        transition: width 0.3s ease-in-out;
+        overflow: hidden;
+      }
+
+      .sidebar.expanded {
+        width: 200px; /* Expanded width */
+      }
+
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin-top: 50px; /* Space for buttons */
+      }
+
+      .menu li {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        cursor: pointer;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transition: background 0.3s;
+      }
+
+      .menu li:hover {
+        background: #555;
+      }
+
+      .menu li i {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+
+      .menu li span {
+        display: none;
+        white-space: nowrap;
+      }
+
+      /* Show text only when sidebar is expanded */
+      .sidebar.expanded .menu li span {
+        display: inline-block;
+      }
+
+      /* Toggle & Theme Buttons */
+      .button-container {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .toggle-btn,
+      .theme-btn {
+        background: #444;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover,
+      .theme-btn:hover {
+        background: #666;
+      }
+
+      /* Content Area */
+      .content {
+        margin-left: 60px; /* Adjusted for collapsed menu */
+        padding: 20px;
+        width: 100%;
+        transition: margin-left 0.3s ease-in-out;
+      }
+
+      .sidebar.expanded ~ .content {
+        margin-left: 200px; /* Adjusted for expanded menu */
+      }
+
+      /* Dark Mode */
+      body.dark-mode {
+        background: #222;
+        color: white;
+      }
+
+      .sidebar.dark-mode {
+        background: #111;
+      }
+
+      .menu li.dark-mode:hover {
+        background: #222;
+      }
+
+      .toggle-btn.dark-mode,
+      .theme-btn.dark-mode {
+        background: #222;
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="button-container">
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+        <button class="theme-btn" id="themeBtn">🌙</button>
+      </div>
+      <ul class="menu">
+        <li><i class="fas fa-home"></i> <span>Home</span></li>
+        <li><i class="fas fa-user"></i> <span>Profile</span></li>
+        <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+        <li><i class="fas fa-info-circle"></i> <span>About</span></li>
+        <li><i class="fas fa-sign-out-alt"></i> <span>Logout</span></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>Welcome</h1>
+      <p>This is the main content area.</p>
+    </div>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleBtn");
+      const themeBtn = document.getElementById("themeBtn");
+
+      // Load saved states from localStorage
+      if (localStorage.getItem("sidebarState") === "expanded") {
+        sidebar.classList.add("expanded");
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        sidebar.classList.add("dark-mode");
+        document.querySelectorAll(".menu li").forEach((item) => item.classList.add("dark-mode"));
+        toggleBtn.classList.add("dark-mode");
+        themeBtn.classList.add("dark-mode");
+      }
+
+      // Toggle sidebar
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("expanded");
+
+        // Save state to localStorage
+        localStorage.setItem(
+          "sidebarState",
+          sidebar.classList.contains("expanded") ? "expanded" : "collapsed"
+        );
+      });
+
+      // Toggle theme (dark mode)
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        sidebar.classList.toggle("dark-mode");
+        document.querySelectorAll(".menu li").forEach((item) => item.classList.toggle("dark-mode"));
+        toggleBtn.classList.toggle("dark-mode");
+        themeBtn.classList.toggle("dark-mode");
+
+        // Save theme state to localStorage
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark-mode") ? "dark" : "light"
+        );
+      });
+    </script>
+  </body>
+</html>
