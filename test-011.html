@@ -38,6 +38,7 @@
         background-color: #333;
         padding-top: 20px;
         transition: transform 0.3s ease-in-out;
+        z-index: 1500;
       }
 
       /* Hamburger Menu for Mobile */
@@ -56,15 +57,44 @@
         padding: 0;
       }
 
-      .menu li {
+      .menu > li {
         padding: 15px;
+        color: white;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative; /* Needed for submenu positioning */
+      }
+
+      .menu > li:hover {
+        background: #555;
+      }
+      /* Submenu Styles */
+      .submenu {
+        display: none;
+        position: absolute;
+        left: 100%; /* Position to the right of the parent */
+        top: 0;
+        background-color: #444;
+        width: 150px;
+        list-style: none;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        z-index: 2000;
+      }
+
+      .submenu li {
+        padding: 10px;
         color: white;
         cursor: pointer;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       }
 
-      .menu li:hover {
+      .submenu li:hover {
         background: #555;
+      }
+
+      .menu > li:hover .submenu {
+        display: block;
       }
 
       /* Hamburger Button */
@@ -87,6 +117,15 @@
         .hamburger {
           display: block;
         }
+        .submenu {
+          position: relative;
+          left: 0;
+          top: 0;
+          margin-top: 10px;
+        }
+        .menu > li:hover .submenu {
+          display: block; /* keep submenu open on hover for mobile*/
+        }
       }
     </style>
   </head>
@@ -95,20 +134,85 @@
     <button class="hamburger" id="hamburgerBtn">☰</button>
     <div class="sidebar" id="sidebar">
       <ul class="menu">
-        <li>Home</li>
-        <li>Profile</li>
-        <li>Settings</li>
-        <li>About</li>
-        <li>Logout</li>
+        <li>
+          Home
+          <ul class="submenu">
+            <li>Sub Home 1</li>
+            <li>Sub Home 2</li>
+            <li>Sub Home 3</li>
+          </ul>
+        </li>
+        <li>
+          Profile
+          <ul class="submenu">
+            <li>Edit Profile</li>
+            <li>View Profile</li>
+          </ul>
+        </li>
+        <li>
+          Settings
+          <ul class="submenu">
+            <li>General</li>
+            <li>Account</li>
+            <li>Notifications</li>
+          </ul>
+        </li>
+        <li>
+          About
+          <ul class="submenu">
+            <li>Our Mission</li>
+            <li>Our Team</li>
+            <li>Contact Us</li>
+          </ul>
+        </li>
+        <li>
+          Logout
+          <ul class="submenu">
+            <li>Logout Now</li>
+            <li>Logout Settings</li>
+          </ul>
+        </li>
       </ul>
     </div>
 
     <script>
       const sidebar = document.getElementById("sidebar");
       const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const submenus = document.querySelectorAll(".submenu");
 
       hamburgerBtn.addEventListener("click", () => {
         sidebar.classList.toggle("open");
+      });
+
+      // Function to hide submenus after a delay
+      function hideSubmenus() {
+        submenus.forEach((submenu) => {
+          submenu.style.display = "none";
+        });
+      }
+
+      // Set a timeout to hide submenus after 3 seconds (3000 milliseconds)
+      let timeoutId;
+
+      document.querySelectorAll(".menu > li").forEach((menuItem) => {
+        menuItem.addEventListener("mouseenter", () => {
+          clearTimeout(timeoutId); // Clear any existing timeout
+        });
+
+        menuItem.addEventListener("mouseleave", () => {
+          timeoutId = setTimeout(hideSubmenus, 3000); // Hide after 3 seconds
+        });
+      });
+
+      // Prevent the timeout from triggering when hovering over a submenu
+      submenus.forEach((submenu) => {
+        submenu.addEventListener("mouseenter", () => {
+          clearTimeout(timeoutId);
+        });
+
+        submenu.addEventListener("mouseleave", () => {
+          timeoutId = setTimeout(hideSubmenus, 3000);
+        });
       });
     </script>
   </body>
