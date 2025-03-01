@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Sidebar</title>
+    <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/brands.min.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #444;
+        color: white;
+        z-index: 1000;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* Sidebar for Desktop */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 50px;
+        width: 200px;
+        height: calc(100vh - 50px);
+        background-color: #333;
+        padding-top: 20px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Hamburger Menu for Mobile */
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(-100%);
+          width: 250px;
+        }
+        .sidebar.open {
+          transform: translateX(0);
+        }
+      }
+
+      .menu {
+        list-style: none;
+        padding: 0;
+      }
+
+      .menu li {
+        padding: 15px;
+        color: white;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .menu li:hover {
+        background: #555;
+      }
+
+      /* Hamburger Button */
+      .hamburger {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: #15005b;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 5px;
+        display: none;
+        z-index: 2000;
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Responsive Sidebar with Hamburger Menu</div>
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="sidebar" id="sidebar">
+      <ul class="menu">
+        <li>Home</li>
+        <li>Profile</li>
+        <li>Settings</li>
+        <li>About</li>
+        <li>Logout</li>
+      </ul>
+    </div>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+
+      hamburgerBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
