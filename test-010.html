@@ -1,277 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enhanced Sidebar</title>
-    <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
-    <link href="assets/fontawesome/css/brands.min.css" rel="stylesheet" />
-    <link href="assets/fontawesome/css/solid.min.css" rel="stylesheet" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
 
-      /* Header with 3 Rows */
-      .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #444;
-        color: white;
-        z-index: 1000;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Sidebar</title>
+  <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/brands.min.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-      .header .row {
-        padding: 10px;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      }
+    /* Header with 3 Rows */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #444;
+      color: white;
+      z-index: 1000;
+    }
 
-      /* Sidebar */
+    .header .row {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 100px;
+      width: 60px;
+      height: calc(100vh - 100px);
+      background-color: #333;
+      transition: width 0.3s ease-in-out;
+      overflow: hidden;
+    }
+
+    .sidebar.expanded {
+      width: 200px;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin-top: 50px;
+    }
+
+    .menu li {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      cursor: pointer;
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .menu li:hover {
+      background: #555;
+    }
+
+    .menu li i {
+      font-size: 20px;
+      width: 30px;
+      text-align: center;
+    }
+
+    .menu li span {
+      display: none;
+      margin-left: 10px;
+    }
+
+    .sidebar.expanded .menu li span {
+      display: inline-block;
+    }
+
+    /* Tooltip */
+    .menu li .tooltip {
+      position: absolute;
+      left: 70px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, transform 0.2s;
+      transform: translateX(10px);
+    }
+
+    .menu li:hover .tooltip,
+    .sidebar.expanded .menu li .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    /* Toggle & Theme Buttons */
+    .button-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .toggle-btn,
+    .theme-btn {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover,
+    .theme-btn:hover {
+      background: #666;
+    }
+
+    /* Content Area */
+    .content {
+      margin-left: 60px;
+      padding: 20px;
+      width: 100%;
+      margin-top: 100px;
+      transition: margin-left 0.3s ease-in-out;
+    }
+
+    .sidebar.expanded~.content {
+      margin-left: 200px;
+    }
+
+    /* Auto-hide Sidebar */
+    .sidebar.auto-hide {
+      width: 60px;
+    }
+
+    /* Dark Mode */
+    body {
+      background: #fff;
+      color: black;
+    }
+
+    body.dark-mode {
+      background: #222;
+      color: white;
+    }
+
+    .sidebar.dark-mode {
+      background: #111;
+    }
+
+    .menu li.dark-mode:hover {
+      background: #222;
+    }
+
+    .toggle-btn.dark-mode,
+    .theme-btn.dark-mode {
+      background: #222;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
       .sidebar {
-        position: fixed;
-        left: 0;
-        top: 100px;
-        width: 60px;
-        height: calc(100vh - 100px);
-        background-color: #333;
-        transition: width 0.3s ease-in-out;
-        overflow: hidden;
+        width: 0;
       }
 
       .sidebar.expanded {
         width: 200px;
       }
 
-      .menu {
-        list-style: none;
-        padding: 0;
-        margin-top: 50px;
-      }
-
-      .menu li {
-        display: flex;
-        align-items: center;
-        padding: 15px;
-        cursor: pointer;
-        color: white;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        transition: background 0.3s;
-        position: relative;
-      }
-
-      .menu li:hover {
-        background: #555;
-      }
-
-      .menu li i {
-        font-size: 20px;
-        width: 30px;
-        text-align: center;
-      }
-
-      .menu li span {
-        display: none;
-        margin-left: 10px;
-      }
-
-      .sidebar.expanded .menu li span {
-        display: inline-block;
-      }
-
-      /* Tooltip */
-      .menu li .tooltip {
-        position: absolute;
-        left: 70px;
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 5px 10px;
-        font-size: 12px;
-        border-radius: 5px;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease-in-out, transform 0.2s;
-        transform: translateX(10px);
-      }
-
-      .menu li:hover .tooltip,
-      .sidebar.expanded .menu li .tooltip {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-      }
-
-      /* Toggle & Theme Buttons */
-      .button-container {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        display: flex;
-        gap: 10px;
-      }
-
-      .toggle-btn,
-      .theme-btn {
-        background: #444;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s;
-      }
-
-      .toggle-btn:hover,
-      .theme-btn:hover {
-        background: #666;
-      }
-
-      /* Content Area */
       .content {
-        margin-left: 60px;
-        padding: 20px;
-        width: 100%;
-        margin-top: 100px;
-        transition: margin-left 0.3s ease-in-out;
+        margin-left: 0;
       }
 
-      .sidebar.expanded ~ .content {
+      .sidebar.expanded~.content {
         margin-left: 200px;
       }
+    }
+  </style>
+</head>
 
-      /* Auto-hide Sidebar */
-      .sidebar.auto-hide {
-        width: 60px;
-      }
+<body>
+  <!-- Header with 3 Rows -->
+  <div class="header">
+    <div class="row">Row 1: Site Name / Branding</div>
+    <div class="row">Row 2: Navigation / Links</div>
+    <div class="row">Row 3: Search Bar / Additional Info</div>
+  </div>
 
-      /* Dark Mode */
-      body {
-        background: #fff;
-        color: black;
-      }
-
-      body.dark-mode {
-        background: #222;
-        color: white;
-      }
-
-      .sidebar.dark-mode {
-        background: #111;
-      }
-
-      .menu li.dark-mode:hover {
-        background: #222;
-      }
-
-      .toggle-btn.dark-mode,
-      .theme-btn.dark-mode {
-        background: #222;
-      }
-
-      /* Mobile Responsiveness */
-      @media (max-width: 768px) {
-        .sidebar {
-          width: 0;
-        }
-        .sidebar.expanded {
-          width: 200px;
-        }
-        .content {
-          margin-left: 0;
-        }
-        .sidebar.expanded ~ .content {
-          margin-left: 200px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Header with 3 Rows -->
-    <div class="header">
-      <div class="row">Row 1: Site Name / Branding</div>
-      <div class="row">Row 2: Navigation / Links</div>
-      <div class="row">Row 3: Search Bar / Additional Info</div>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="button-container">
+      <button class="toggle-btn" id="toggleBtn">☰</button>
+      <button class="theme-btn" id="themeBtn">🌙</button>
     </div>
+    <ul class="menu">
+      <li>
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+        <div class="tooltip">Home</div>
+      </li>
+      <li>
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+        <div class="tooltip">Profile</div>
+      </li>
+      <li>
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+        <div class="tooltip">Settings</div>
+      </li>
+      <li>
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+        <div class="tooltip">About</div>
+      </li>
+      <li>
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+        <div class="tooltip">Logout</div>
+      </li>
+    </ul>
+  </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-      <div class="button-container">
-        <button class="toggle-btn" id="toggleBtn">☰</button>
-        <button class="theme-btn" id="themeBtn">🌙</button>
-      </div>
-      <ul class="menu">
-        <li>
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-          <div class="tooltip">Home</div>
-        </li>
-        <li>
-          <i class="fas fa-user"></i>
-          <span>Profile</span>
-          <div class="tooltip">Profile</div>
-        </li>
-        <li>
-          <i class="fas fa-cog"></i>
-          <span>Settings</span>
-          <div class="tooltip">Settings</div>
-        </li>
-        <li>
-          <i class="fas fa-info-circle"></i>
-          <span>About</span>
-          <div class="tooltip">About</div>
-        </li>
-        <li>
-          <i class="fas fa-sign-out-alt"></i>
-          <span>Logout</span>
-          <div class="tooltip">Logout</div>
-        </li>
-      </ul>
-    </div>
+  <!-- Content Area -->
+  <div class="content">
+    <h1>Welcome</h1>
+    <p>This is the main content area.</p>
+  </div>
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleBtn");
+    const themeBtn = document.getElementById("themeBtn");
+    let hideTimeout;
 
-    <!-- Content Area -->
-    <div class="content">
-      <h1>Welcome</h1>
-      <p>This is the main content area.</p>
-    </div>
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const toggleBtn = document.getElementById("toggleBtn");
-      const themeBtn = document.getElementById("themeBtn");
-      let hideTimeout;
+    // Default light theme
+    localStorage.setItem("theme", "light");
 
-      // Default light theme
-      localStorage.setItem("theme", "light");
+    // Auto-hide sidebar
+    sidebar.addEventListener("mouseleave", () => {
+      hideTimeout = setTimeout(() => {
+        sidebar.classList.remove("expanded");
+      }, 3000);
+    });
 
-      // Auto-hide sidebar
-      sidebar.addEventListener("mouseleave", () => {
-        hideTimeout = setTimeout(() => {
-          sidebar.classList.remove("expanded");
-        }, 3000);
-      });
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("expanded");
+      localStorage.setItem(
+        "sidebarState",
+        sidebar.classList.contains("expanded") ? "expanded" : "collapsed"
+      );
+    });
 
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("expanded");
-        localStorage.setItem(
-          "sidebarState",
-          sidebar.classList.contains("expanded") ? "expanded" : "collapsed"
-        );
-      });
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      sidebar.classList.toggle("dark-mode");
+      document.querySelectorAll(".menu li").forEach((item) => item.classList.toggle("dark-mode"));
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-mode") ? "dark" : "light"
+      );
+    });
+  </script>
+</body>
 
-      themeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        sidebar.classList.toggle("dark-mode");
-        document.querySelectorAll(".menu li").forEach((item) => item.classList.toggle("dark-mode"));
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark-mode") ? "dark" : "light"
-        );
-      });
-    </script>
-  </body>
 </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(167, 214, 172);
+        }
+
+        .middle-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            height: 160px;
+        }
+
+        .middle-row .image {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            aspect-ratio: 1 / 1;
+            /* Ensures square aspect ratio */
+            margin-right: 20px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 0px solid rgb(151, 2, 2);
+        }
+
+        .middle-row .image .rotating-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(rgba(255, 0, 0, 0.4),
+                    rgba(0, 128, 0, 0.4),
+                    rgba(255, 255, 0, 0.4),
+                    rgba(0, 0, 255, 0.4),
+                    rgba(255, 166, 0, 0.4),
+                    rgba(108, 208, 0, 0.4),
+                    rgba(255, 99, 71, 0.4),
+                    rgba(255, 0, 0, 0.4));
+            animation: rotateBackground 10s linear infinite;
+        }
+
+        .middle-row .image img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures image maintains aspect ratio */
+            padding: 4px;
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+
+        @keyframes rotateBackground {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .middle-row .image {
+                width: 60px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .middle-row .image {
+                width: 40px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .middle-row .image {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="middle-row">
+        <div class="image">
+            <div class="rotating-background"></div>
+            <img src="assets/images/svp-logo.png" alt="" />
+        </div>
+        <div class="names">
+            <p>Unit of Kanara College Society &reg;, Kumta</p>
+            <h1>SHREE VIDYADHIRAJ POLYTECHNIC, KUMTA</h1>
+            <h4>K.K.C. Road, Kumta, Uttara Kannada Dist, Karnataka - 581343</h4>
+            <h5>Approved by AICTE, New Delhi and affiliated to DTE, Govt of Karnataka</h5>
+        </div>
+    </div>
+</body>
+
+</html>
