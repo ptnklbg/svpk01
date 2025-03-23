@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid List Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns */
+            gap: 10px;
+            /* Spacing between grid items */
+            list-style: none;
+            padding: 0;
+        }
+
+        .grid-list li {
+            background: lightblue;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .grid-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .grid-list {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="grid-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+</body>
+
+</html>

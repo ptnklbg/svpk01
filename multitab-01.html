@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tab Container</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        .tab-container {
+            width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Tab header styles */
+        .tabs {
+            display: flex;
+            background: #333;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab:hover {
+            background: #444;
+        }
+
+        .tab.active {
+            background: #007BFF;
+        }
+
+        /* Tab content styling */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab-container">
+        <!-- Tab Headers -->
+        <div class="tabs">
+            <div class="tab active" onclick="showTab(0)">Tab 1</div>
+            <div class="tab" onclick="showTab(1)">Tab 2</div>
+            <div class="tab" onclick="showTab(2)">Tab 3</div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content active">
+            <h3>Content for Tab 1</h3>
+            <p>This is the first tab's content.</p>
+        </div>
+        <div class="tab-content">
+            <h3>Content for Tab 2</h3>
+            <p>This is the second tab's content.</p>
+        </div>
+        <div class="tab-content">
+            <h3>Content for Tab 3</h3>
+            <p>This is the third tab's content.</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(index) {
+            // Get all tabs and content
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
+
+            // Remove 'active' class from all tabs and contents
+            tabs.forEach(tab => tab.classList.remove("active"));
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Add 'active' class to the selected tab and content
+            tabs[index].classList.add("active");
+            contents[index].classList.add("active");
+        }
+    </script>
+
+</body>
+
+</html>
